@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Library Project</title>
+</head>
+
+<body>
+    <header>My Library</header>
+    <main>
+        <div class="desc">Description</div>
+        <form action="" class="book-input">
+            <label for="submit-book">Book</label>
+            <input class="submit-inputs" type="text" name="book" id="submit-book">
+            <label for="submit-author">Author</label>
+            <input class="submit-inputs" type="text" name="author" id="submit-author">
+            <label for="submit-pages">Pages</label>
+            <input class="submit-inputs" type="text" name="pages" id="submit-pages">
+            <select name="read" id="submit-read">
+                <option value="read">Read</option>
+                <option value="unread">Not Read</option>
+            </select>
+        </form>
+        <div class="books">List of books in a table?</div>
+    </main>
+    <footer>&copy; <span id="copyright-year"></span>, barydos</footer>
+</body>
+
+<script>
+    let footer = document.querySelector('#copyright-year');
+    footer.innerHTML = new Date().getFullYear();
+</script>
+
+</html>

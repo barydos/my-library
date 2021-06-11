@@ -1,3 +1,101 @@
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 60%;
+    height: 85vh;
+    
+    box-sizing: border-box;
+}
+
+/* HEADER AND FOOTER */
+
+header {
+    text-align: left;
+    margin-top: 15%;
+}
+
 footer {
+    position: absolute;
+    bottom: 0;
     color: blue;
+    width: 100%;
+    text-align: center;
+}
+
+/* MAIN CONTAINER */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 30px auto 0 auto;
+}
+
+.desc {
+    margin-bottom: 30px;
+    padding: 0;
+    text-justify: inter-word;
+    font-size: 1rem;
+    width: 100%;
+}
+
+
+/* CORE FEATURES */
+
+.book-input {
+    width: 100%;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.submit-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    flex: 2;
+}
+
+.option-group {
+    flex: 1;
+}
+
+.submit-group label {
+    align-self: flex-start;
+    padding: 3px;
+}
+
+input[type=text] {
+    width: 85%;
+}
+
+#submit-read {
+    height: 29px;
+}
+
+input[type=text], #submit-read {
+    font-size: 13px;
+    padding: 5px;
+}
+
+.submit-btn {
+    margin: 10px 0;
+}
+
+.books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    width: 80%;
 }

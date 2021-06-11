@@ -2,7 +2,7 @@ html, body {
     margin: 0 auto;
     padding: 0;
     position: relative;
-    width: 60%;
+    width: 700px;
     height: 85vh;
     
     box-sizing: border-box;
@@ -52,7 +52,6 @@ main {
     display: flex;
     align-items: center;
     width:100%;
-    margin: 0;
     padding: 0;
 }
 
@@ -62,9 +61,10 @@ main {
     justify-content: stretch;
     align-items: flex-start;
     flex: 2;
+    max-width: 200px;
 }
 
-.option-group {
+.option-group, .pages {
     flex: 1;
 }
 
@@ -79,11 +79,13 @@ input[type=text] {
 
 #submit-read {
     height: 29px;
+    margin-left: 12px;
+    padding: 0;
 }
 
 input[type=text], #submit-read {
     font-size: 13px;
-    padding: 5px;
+    padding: 5px 0;
 }
 
 .submit-btn {

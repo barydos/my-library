@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     position: relative;
     width: 700px;
-    height: 85vh;
+    min-height: 80vh;
     
     box-sizing: border-box;
 }
@@ -21,6 +21,7 @@ footer {
     color: blue;
     width: 100%;
     text-align: center;
+    height: 2.5rem;
 }
 
 /* MAIN CONTAINER */
@@ -31,6 +32,8 @@ main {
     justify-content: flex-start;
     align-items: center;
     margin: 30px auto 0 auto;
+
+    padding-bottom: 10rem;
 }
 
 .desc {
@@ -97,7 +100,20 @@ input[type=text], #submit-read {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    padding: 20px;
     width: 80%;
+}
+
+.book-entry {
+    display: flex;
+    padding-top: 20px;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.item-col {
+}
+
+.header { 
+    font-weight: bold;
 }

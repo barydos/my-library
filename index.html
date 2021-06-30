@@ -41,79 +41,151 @@
             <button class="submit-btn" type="submit">submit</button>
         </form>
         <div class="books">
-            <div class="book-entry">
+            <!-- <div class="book-entry">
                 <div class="item-col header">Title</div>
                 <div class="item-col header">Author</div>
                 <div class="item-col header">Pages</div>
                 <div class="item-col header">Status</div>
                 <div class="item-col header"> </div>
-            </div>
+            </div> -->
         </div>
     </main>
     <footer>&copy; <span id="copyright-year"></span>, barydos</footer>
 </body>
 
+<script src="js/index.js"></script>
 <script>
-    // Footer
     let footer = document.querySelector('#copyright-year');
     footer.innerHTML = new Date().getFullYear();
+    
+    // // Footer
+    // let footer = document.querySelector('#copyright-year');
+    // footer.innerHTML = new Date().getFullYear();
 
-    // MAKE SURE TO READ THE INSTRUCTIONS
-    // BONUS AT THE END: change form to a modal from a button
+    // // MAKE SURE TO READ THE INSTRUCTIONS
+    // // BONUS AT THE END: change form to a modal from a button
 
-    document.querySelector('.book-input').addEventListener('submit', submitBook);
+    // document.querySelector('.book-input').addEventListener('submit', submitBook);
 
-    function submitBook(e) {
-        e.preventDefault();
-        let form = document.querySelector('form.book-input');
+    // let myLibrary = [];
+    // let book1 = new Book('First', 'Mr One', 100, true);
+    // let book2 = new Book('Second', 'Ms Two', 200, false);
+    // myLibrary.push(book1);
+    // myLibrary.push(book2);
 
-        let bookInput = document.querySelector('#submit-book').value;
-        let authorInput = document.querySelector('#submit-author').value;
-        let pagesInput = document.querySelector('#submit-pages').value;
-        let statusInput = document.querySelector('#submit-read').value;
+    // // initialise book table
+    // loadLibrary();
 
-        let inputs = document.querySelectorAll('.submit-inputs');
-        let valueArr = Array.from(inputs).map(item => item.value);
-        let status = valueArr.slice(-1)[0];
-        valueArr = valueArr.slice(0,3);
+    // // constructor
+    // function Book(title, author, pages, read) {
+    //     this.title = title;
+    //     this.author = author;
+    //     this.pages = pages;
+    //     this.read = read;
+    // }
 
-        let bookList = document.querySelector('.books');
-        let newBook = document.createElement('div');
-        newBook.classList.add('book-entry');
-        bookList.appendChild(newBook);
-        for (let val of valueArr) {
-            let newVal = document.createElement('div');
-            newVal.innerText = val;
-            newVal.classList.add('item-col');
+    // function addBookToLibrary(book) {
+    //     myLibrary.push(book);
+    // }
 
-            newBook.appendChild(newVal);
-        }
+    // function submitBook(e) {
+    //     e.preventDefault();
+    //     let form = document.querySelector('form.book-input');
 
-        let statusItem = document.createElement('button');
-        statusItem.classList.add('item-col');
-        statusItem.innerText = status;
-        newBook.appendChild(statusItem);
+    //     let bookInput = document.querySelector('#submit-book').value;
+    //     let authorInput = document.querySelector('#submit-author').value;
+    //     let pagesInput = document.querySelector('#submit-pages').value;
+    //     let statusInput = document.querySelector('#submit-read').value;
 
-        let deleteItem = document.createElement('button');
+    //     let newBookObj = new Book(bookInput, authorInput, pagesInput, statusInput);
+    //     addBookToLibrary(newBookObj);
+    //     loadLibrary();
 
-        deleteItem.addEventListener('click', deleteEntry);
-        deleteItem.classList.add('del');
-        deleteItem.innerText = 'Delete';
-        newBook.appendChild(deleteItem);
-        // form.reset();
+    //     // let inputs = document.querySelectorAll('.submit-inputs');
+    //     // let valueArr = Array.from(inputs).map(item => item.value);
+    //     // let status = valueArr.slice(-1)[0];
+    //     // valueArr = valueArr.slice(0,3);
 
-    }
+    //     // let bookList = document.querySelector('.books');
+    //     // let newBook = document.createElement('div');
+    //     // newBook.classList.add('book-entry');
+    //     // bookList.appendChild(newBook);
+    //     // for (let val of valueArr) {
+    //     //     let newVal = document.createElement('div');
+    //     //     newVal.innerText = val;
+    //     //     newVal.classList.add('item-col');
 
-    function deleteEntry(e) {
-        if (confirm('Delete entry?')) {
-            e.target.parentElement.remove();
-        }
-    }
+    //     //     newBook.appendChild(newVal);
+    //     // }
 
-    function setAttributes(elem, options) {
-        for (let attr of Object.keys(options)) {
-            elem.setAttribute(attr, options[attr]);
-        }
-    }
+    //     // let statusItem = document.createElement('button');
+    //     // statusItem.classList.add('item-col');
+    //     // statusItem.innerText = status;
+    //     // newBook.appendChild(statusItem);
+
+    //     // let deleteItem = document.createElement('button');
+
+    //     // deleteItem.addEventListener('click', deleteEntry);
+    //     // deleteItem.classList.add('del');
+    //     // deleteItem.innerText = 'Delete';
+    //     // newBook.appendChild(deleteItem);
+    //     // form.reset();
+
+    // }
+
+    // function loadLibrary() {
+    //     // myLibrary array
+    //     let booksDisplay = document.querySelector('.books');
+    //     let bookTable = document.createElement('table');
+
+    //     generateBooksHeading(bookTable);
+    //     generateBooksBody(bookTable);
+
+    //     booksDisplay.appendChild(bookTable);
+    // }
+
+    // function generateBooksHeading(tableElem) {
+    //     let tHead = tableElem.createTHead();
+    //     let row = tHead.insertRow();
+    //     for (let header of ['Title', 'Author' ,'Pages', 'Read']) {
+    //         let th = document.createElement('th');
+    //         let text = document.createTextNode(header);
+    //         th.appendChild(text);
+    //         row.appendChild(th);
+    //     }
+    // }
+    
+    // function generateBooksBody(tableElem) {
+    //     let tBody = document.createElement('tbody');
+    //     tableElem.appendChild(tBody);
+    //     for (let book of myLibrary) {
+    //         addToBookTable(tableElem, book);  
+    //     }
+    // }
+
+    // function addToBookTable(tableElem, book) {
+    //     let row = tableElem.insertRow();
+    //     // let bookDiv = document.createElement('div');
+    //     // bookDiv.classList.add('book-entry');
+    //     // row.classList.add('book-entry');
+    //     for (let [key, val] of Object.entries(book)) {
+    //         let td = document.createElement('td');
+    //         let text = document.createTextNode(val);
+    //         td.appendChild(text);
+    //         row.appendChild(td);
+    //     }
+    // }
+
+    // function deleteEntry(e) {
+    //     if (confirm('Delete entry?')) {
+    //         e.target.parentElement.remove();
+    //     }
+    // }
+
+    // function setAttributes(elem, options) {
+    //     for (let attr of Object.keys(options)) {
+    //         elem.setAttribute(attr, options[attr]);
+    //     }
+    // }
 </script>
 </html>

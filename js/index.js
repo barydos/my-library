@@ -10,6 +10,9 @@ myLibrary.push(book2);
 // initialise book table
 loadLibrary();
 
+let bookForm = document.querySelector('.book-input');
+bookForm.addEventListener('submit', addBookToLibrary);
+
 // end main logic //
 
 
@@ -21,13 +24,25 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary(book) {
-    myLibrary.push(book);
+function addBookToLibrary(e) {
+    e.preventDefault();
+
+    let [title, author, pages, read] = [...e.target.elements].map(item => item.value);
+    let newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+
+    loadLibrary();
+    this.reset();
 }
 
 function loadLibrary() {
     let booksDisplay = document.querySelector('.books');
+    let library = document.querySelector('.library');
+    if (library)
+        library.remove();
+
     let bookTable = document.createElement('table');
+    bookTable.classList.add('library');
 
     generateBooksHeading(bookTable);
     generateBooksBody(bookTable);
@@ -50,7 +65,7 @@ function generateBooksBody(tableElem) {
     let tBody = document.createElement('tbody');
     tableElem.appendChild(tBody);
     for (let book of myLibrary) {
-        addToBookTable(tableElem, book);
+        addToBookTable(tBody, book);
     }
 }
 
@@ -62,4 +77,12 @@ function addToBookTable(tableElem, book) {
         td.appendChild(text);
         row.appendChild(td);
     }
+    
+    // Add delete button
+    let td = document.createElement('td');
+    let del = document.createElement('button');
+    let text = document.createTextNode('x');
+    del.appendChild(text);
+    td.appendChild(del);
+    row.appendChild(td);
 }

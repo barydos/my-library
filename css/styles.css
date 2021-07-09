@@ -114,6 +114,6 @@ input[type=text], #submit-read {
 .item-col {
 }
 
-.header { 
-    font-weight: bold;
+.library  td {
+    text-align: center;
 }

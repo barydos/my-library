@@ -12,13 +12,7 @@ myLibrary.push(book2);
 // initialise book table
 loadLibrary();
 
-// event listeners
-document.querySelector('.book-input').addEventListener('submit', addBookToLibrary);
-
 // end main logic //
-
-
-// constructor
 
 
 function addBookToLibrary(e) {
@@ -32,4 +26,12 @@ function addBookToLibrary(e) {
     this.reset();
 }
 
-export { myLibrary };
+function deleteBook(e) {
+    let rowNum = e.target.closest('tr').getAttribute('data-row');
+    debugger;
+    myLibrary.splice(rowNum, 1);
+    loadLibrary();
+}
+
+
+export { myLibrary, addBookToLibrary, deleteBook };

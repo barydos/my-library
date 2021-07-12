@@ -18,8 +18,9 @@ loadLibrary();
 function addBookToLibrary(e) {
     e.preventDefault();
 
-    let [title, author, pages, read] = [...e.target.elements].map(item => item.value);
-    let newBook = new Book(title, author, pages, read);
+    let [title, author, pages, status] = [...e.target.elements].map(item => item.value);
+    debugger;
+    let newBook = new Book(title, author, pages, status);
     myLibrary.push(newBook);
 
     loadLibrary();
@@ -28,10 +29,26 @@ function addBookToLibrary(e) {
 
 function deleteBook(e) {
     let rowNum = e.target.closest('tr').getAttribute('data-row');
-    debugger;
     myLibrary.splice(rowNum, 1);
     loadLibrary();
 }
 
+function toggleStatus(e) {
+    let rowNum = e.target.closest('tr').getAttribute('data-row');
+    debugger;
+    myLibrary[rowNum].toggleStatus();
+    loadLibrary();
+}
 
-export { myLibrary, addBookToLibrary, deleteBook };
+
+export { myLibrary, addBookToLibrary, deleteBook, toggleStatus };
+
+/**
+ * TODO: 
+ * 1. Toggle `read` status [DONE]
+ * 2. Add localStorage functionality
+ * 3. Add CSS to make pretty (change footer to github) incl. fonts
+ * 4. Create a modal to `edit` book
+ * 5. Convert submission to a modal (New Book + button)
+ * 6. Add confirmation prompt for deleting a book.
+ */

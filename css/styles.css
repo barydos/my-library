@@ -67,6 +67,11 @@ main {
     max-width: 200px;
 }
 
+#submit-status {
+    font-size: 12px;
+    padding: 5px 0 6px 5px;
+}
+
 .option-group, .pages {
     flex: 1;
 }
@@ -105,17 +110,18 @@ input[type=text], #submit-read {
     margin-top: 20px;
 }
 
-.book-entry {
+/* .book-entry {
     display: flex;
     padding-top: 20px;
     width: 100%;
     justify-content: space-between;
 
-}
-
-.item-col {
-}
+} */
 
 .library  td {
     text-align: center;
+}
+
+.status {
+    min-width: 80px;
 }

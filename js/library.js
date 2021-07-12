@@ -1,10 +1,16 @@
-import { myLibrary, addBookToLibrary, deleteBook } from './index.js'
+import { myLibrary, addBookToLibrary, deleteBook, toggleStatus } from './index.js'
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, status) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.status = status == 1;
+}
+
+Book.prototype = {
+    toggleStatus: function() {
+        this.status = !this.status;
+    }
 }
 
 function loadLibrary() {
@@ -32,12 +38,16 @@ function loadLibrary() {
     document.querySelectorAll('.delete').forEach(btn => {
         btn.addEventListener('click', deleteBook);
     });
+    document.querySelectorAll('.status').forEach(btn => {
+        btn.addEventListener('click', toggleStatus);
+    });
+
 }
 
 function generateBooksHeading(tableElem) {
     let tHead = tableElem.createTHead();
     let row = tHead.insertRow();
-    for (let header of ['Title', 'Author', 'Pages', 'Read']) {
+    for (let header of ['Title', 'Author', 'Pages', 'Status']) {
         let th = document.createElement('th');
         let text = document.createTextNode(header);
         th.appendChild(text);
@@ -57,7 +67,21 @@ function addToBookTable(tableElem, book) {
     let rowNum = tableElem.childNodes.length;
     let row = tableElem.insertRow();
     row.setAttribute('data-row', rowNum);
+
     for (let [key, val] of Object.entries(book)) {
+
+        if (key.toLowerCase() == 'status') {
+            let td = document.createElement('td');
+            let btn = document.createElement('button');
+            let text = document.createTextNode(!!val ? 'Read' : 'Not read');
+            btn.appendChild(text);
+            btn.classList.add('status');
+            td.appendChild(btn);
+            row.appendChild(td);
+
+            continue;
+        }
+
         let td = document.createElement('td');
         let text = document.createTextNode(val);
         td.appendChild(text);

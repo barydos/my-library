@@ -2,7 +2,7 @@ html, body {
     margin: 0 auto;
     padding: 0;
     position: relative;
-    width: 700px;
+    width: 900px;
     min-height: 80vh;
     
     box-sizing: border-box;
@@ -18,7 +18,6 @@ header {
 footer {
     position: absolute;
     bottom: 0;
-    color: blue;
     width: 100%;
     text-align: center;
     height: 2.5rem;
@@ -45,35 +44,28 @@ main {
 }
 
 
-/* CORE FEATURES */
+/* input area */
 
 .book-input {
     width: 100%;
+    margin: 0 auto;
 }
 
 .input-group{
     display: flex;
-    align-items: center;
-    width:100%;
     padding: 0;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .submit-group {
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
-    align-items: flex-start;
-    flex: 2;
-    max-width: 200px;
+    margin-right: 20px;
+    width: auto;
 }
-
-#submit-status {
-    font-size: 12px;
-    padding: 5px 0 6px 5px;
-}
-
-.option-group, .pages {
-    flex: 1;
+.submit-group:nth-child(1) {
+    width: 40%;
 }
 
 .submit-group label {
@@ -81,47 +73,149 @@ main {
     padding: 3px;
 }
 
-input[type=text] {
-    width: 85%;
+.option-group {
+    display: flex;
+    width: fit-content;
 }
-
-#submit-read {
-    height: 29px;
-    margin-left: 12px;
-    padding: 0;
-}
-
-input[type=text], #submit-read {
+.option-group select {
     font-size: 13px;
-    padding: 5px 0;
+    margin-top: 5px;
+    padding: 8px 0 9px 5px;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 3px;
+    outline: none;
 }
 
-.submit-btn {
-    margin: 10px 0;
+
+input[type=text] {
+    font-size: 13px;
+    padding: 5px 15px;
+    outline: none;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 3px;
+    margin: 5px 0;
+    
+    height: 25px;
 }
+
+input[type=text]:hover,
+select:hover {
+    box-shadow:  0 0 1px 1px rgb(226, 226, 226);
+}
+
+
+.submission-btn {
+    margin: 10px 10px 10px 0;
+    padding: 8px 20px;
+    background-color: rgb(70, 204, 255);
+    border: 1px solid rgb(65, 199, 250);
+    border-radius: 3px;
+    color: white;
+
+    letter-spacing: 1px;
+}
+
+.submission-btn:hover{
+    background-color: rgb(60, 194, 245);
+    box-shadow: 0 0 1px 0.5px rgb(72, 206, 257);
+}
+
+.reset {
+    background-color: rgb(201, 37, 165);
+    border: 1px solid rgb(196, 32, 160);
+}
+
+.reset:hover{
+    background-color: rgb(191, 27, 155);
+    box-shadow: 0 0 1px 0.5px rgb(203, 39, 167);
+}
+
+/* LIBRARY AREA */
 
 .books {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
 
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-/* .book-entry {
-    display: flex;
-    padding-top: 20px;
+.library {
+    table-layout: fixed;
     width: 100%;
-    justify-content: space-between;
+    border-collapse: collapse;
+    text-align: left;
+}
 
-} */
+.library thead th {
+    padding-bottom: 10px;
+    /* text-align: left; */
+}
+.library tbody tr {
+    border-top: 1px solid rgb(211, 211, 211);
+}
 
-.library  td {
+.library thead th:nth-child(1){
+    width: 35%;
+}
+.library thead th:nth-child(2){
+    width: 15%;
+}
+.library thead th:nth-child(3),
+.library tbody td:nth-child(3){
+    width: 15%;
+    text-align: center;
+}
+.library thead th:nth-child(4),
+.library tbody td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+.library thead th:nth-child(5) {
+    width: 10%;
     text-align: center;
 }
 
-.status {
-    min-width: 80px;
+.library  td {
+    padding: 25px 0;
+}
+
+button {
+    font-size: 12px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.status,
+.status:hover {
+    width: 90px;
+    padding: 10px 10px;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 3px;
+    background-color: white;
+}
+
+.status:hover {
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 3px;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 0 1px 1px rgb(218, 218, 218);
+}
+
+.delete {
+    width: fit-content;
+    padding: 10px 10px;
+    background-color: rgb(233, 45, 101);
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+.delete:hover {
+    background-color: rgb(213, 25, 81);
+    box-shadow: 0 0 1px 1px rgb(243, 55, 111);
 }

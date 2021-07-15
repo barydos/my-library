@@ -1,10 +1,20 @@
-import { loadLibrary } from './library.js';
+import { loadLibrary, getLibrary, saveLibrary } from './library.js';
 
 // initialise book table
 loadLibrary();
 
+let resetBtn = document.querySelector('.reset');
+resetBtn.addEventListener('click', () => {
+    let checkReset = confirm('Reset library?');
+    if (!checkReset)
+        return;
+
+    localStorage.clear();
+    loadLibrary();
+
+})
 /**
- * TODO: 
+ * TODO:
  * 1. Toggle `read` status [DONE]
  * 2. Add localStorage functionality [DONE]
  * 3. Add CSS to make pretty (change footer to github) incl. fonts

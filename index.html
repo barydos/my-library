@@ -32,23 +32,21 @@
                 </div>
                 <div class="submit-group option-group">
                     <label class="submit-label" for="submit-status">Status</label>
-                    <select class ="submit-inputs" name="status" id="submit-status">
-                        <option value=1>Read</option>
-                        <option value=0>Not Read</option>
-                    </select>
+                    <div class="select-div">
+                        <select class ="submit-inputs" name="status" id="submit-status">
+                            <option value=1>Read</option>
+                            <option value=0>Not Read</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <button class="submit-btn" type="submit">submit</button>
+            <div class="bottom-submit-group">
+                <button class="submission-btn" id="submit-btn" type="submit">SUBMIT</button>
+                <button class="submission-btn reset" type="button">RESET</button>
+            </div>
         </form>
         <div class="books">
             <span id="empty-msg" style="display: none;">No books to display.</span>
-            <!-- <div class="book-entry">
-                <div class="item-col header">Title</div>
-                <div class="item-col header">Author</div>
-                <div class="item-col header">Pages</div>
-                <div class="item-col header">Status</div>
-                <div class="item-col header"> </div>
-            </div> -->
         </div>
     </main>
     <footer>&copy; <span id="copyright-year"></span>, barydos</footer>
@@ -58,135 +56,5 @@
 <script>
     let footer = document.querySelector('#copyright-year');
     footer.innerHTML = new Date().getFullYear();
-    
-    // // Footer
-    // let footer = document.querySelector('#copyright-year');
-    // footer.innerHTML = new Date().getFullYear();
-
-    // // MAKE SURE TO READ THE INSTRUCTIONS
-    // // BONUS AT THE END: change form to a modal from a button
-
-    // document.querySelector('.book-input').addEventListener('submit', submitBook);
-
-    // let myLibrary = [];
-    // let book1 = new Book('First', 'Mr One', 100, true);
-    // let book2 = new Book('Second', 'Ms Two', 200, false);
-    // myLibrary.push(book1);
-    // myLibrary.push(book2);
-
-    // // initialise book table
-    // loadLibrary();
-
-    // // constructor
-    // function Book(title, author, pages, read) {
-    //     this.title = title;
-    //     this.author = author;
-    //     this.pages = pages;
-    //     this.read = read;
-    // }
-
-    // function addBookToLibrary(book) {
-    //     myLibrary.push(book);
-    // }
-
-    // function submitBook(e) {
-    //     e.preventDefault();
-    //     let form = document.querySelector('form.book-input');
-
-    //     let bookInput = document.querySelector('#submit-book').value;
-    //     let authorInput = document.querySelector('#submit-author').value;
-    //     let pagesInput = document.querySelector('#submit-pages').value;
-    //     let statusInput = document.querySelector('#submit-read').value;
-
-    //     let newBookObj = new Book(bookInput, authorInput, pagesInput, statusInput);
-    //     addBookToLibrary(newBookObj);
-    //     loadLibrary();
-
-    //     // let inputs = document.querySelectorAll('.submit-inputs');
-    //     // let valueArr = Array.from(inputs).map(item => item.value);
-    //     // let status = valueArr.slice(-1)[0];
-    //     // valueArr = valueArr.slice(0,3);
-
-    //     // let bookList = document.querySelector('.books');
-    //     // let newBook = document.createElement('div');
-    //     // newBook.classList.add('book-entry');
-    //     // bookList.appendChild(newBook);
-    //     // for (let val of valueArr) {
-    //     //     let newVal = document.createElement('div');
-    //     //     newVal.innerText = val;
-    //     //     newVal.classList.add('item-col');
-
-    //     //     newBook.appendChild(newVal);
-    //     // }
-
-    //     // let statusItem = document.createElement('button');
-    //     // statusItem.classList.add('item-col');
-    //     // statusItem.innerText = status;
-    //     // newBook.appendChild(statusItem);
-
-    //     // let deleteItem = document.createElement('button');
-
-    //     // deleteItem.addEventListener('click', deleteEntry);
-    //     // deleteItem.classList.add('del');
-    //     // deleteItem.innerText = 'Delete';
-    //     // newBook.appendChild(deleteItem);
-    //     // form.reset();
-
-    // }
-
-    // function loadLibrary() {
-    //     // myLibrary array
-    //     let booksDisplay = document.querySelector('.books');
-    //     let bookTable = document.createElement('table');
-
-    //     generateBooksHeading(bookTable);
-    //     generateBooksBody(bookTable);
-
-    //     booksDisplay.appendChild(bookTable);
-    // }
-
-    // function generateBooksHeading(tableElem) {
-    //     let tHead = tableElem.createTHead();
-    //     let row = tHead.insertRow();
-    //     for (let header of ['Title', 'Author' ,'Pages', 'Read']) {
-    //         let th = document.createElement('th');
-    //         let text = document.createTextNode(header);
-    //         th.appendChild(text);
-    //         row.appendChild(th);
-    //     }
-    // }
-    
-    // function generateBooksBody(tableElem) {
-    //     let tBody = document.createElement('tbody');
-    //     tableElem.appendChild(tBody);
-    //     for (let book of myLibrary) {
-    //         addToBookTable(tableElem, book);  
-    //     }
-    // }
-
-    // function addToBookTable(tableElem, book) {
-    //     let row = tableElem.insertRow();
-    //     // let bookDiv = document.createElement('div');
-    //     // bookDiv.classList.add('book-entry');
-    //     // row.classList.add('book-entry');
-    //     for (let [key, val] of Object.entries(book)) {
-    //         let td = document.createElement('td');
-    //         let text = document.createTextNode(val);
-    //         td.appendChild(text);
-    //         row.appendChild(td);
-    //     }
-    // }
-
-    // function deleteEntry(e) {
-    //     if (confirm('Delete entry?')) {
-    //         e.target.parentElement.remove();
-    //     }
-    // }
-
-    // function setAttributes(elem, options) {
-    //     for (let attr of Object.keys(options)) {
-    //         elem.setAttribute(attr, options[attr]);
-    //     }
-    // }
 </script>
 </html>

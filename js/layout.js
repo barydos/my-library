@@ -5,7 +5,7 @@ function buildTable(myLibrary) {
     let library = document.querySelector('.library');
     if (library)
         library.remove();
-    
+
     if (myLibrary.length === 0) {
         document.querySelector('#empty-msg').style.display = "block";
         setEventListeners();
@@ -21,6 +21,8 @@ function buildTable(myLibrary) {
     generateBooksBody(bookTable, myLibrary);
 
     booksDisplay.appendChild(bookTable);
+    let btn = document.createElement('button');
+
     setEventListeners();
 
     function setEventListeners() {
@@ -37,7 +39,7 @@ function buildTable(myLibrary) {
 function generateBooksHeading(tableElem) {
     let tHead = tableElem.createTHead();
     let row = tHead.insertRow();
-    for (let header of ['Title', 'Author', 'Pages', 'Status']) {
+    for (let header of ['Title', 'Author', 'Pages', 'Status', '']) {
         let th = document.createElement('th');
         let text = document.createTextNode(header);
         th.appendChild(text);
@@ -63,11 +65,11 @@ function addToBookTable(tableElem, book) {
         if (key.toLowerCase() == 'status') {
             let td = document.createElement('td');
             let btn = document.createElement('button');
-            let text = document.createTextNode(!!val ? 'Read' : 'Not read');
+            let text = document.createTextNode(!!val ? 'READ' : 'NOT READ');
             btn.appendChild(text);
-            btn.classList.add('status');
             td.appendChild(btn);
             row.appendChild(td);
+            btn.classList.add('status');
 
             continue;
         }
@@ -77,13 +79,14 @@ function addToBookTable(tableElem, book) {
         td.appendChild(text);
         row.appendChild(td);
     }
-    
+
     // Add delete button
     let td = document.createElement('td');
     let del = document.createElement('button');
-    let text = document.createTextNode('x');
+    let text = document.createTextNode('DELETE');
     del.appendChild(text);
     del.classList.add('delete');
+    del.setAttribute('type', 'submit');
     td.appendChild(del);
     row.appendChild(td);
 }

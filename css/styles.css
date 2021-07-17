@@ -15,10 +15,8 @@ html, body {
 
 header {
     text-align: left;
-    margin-top: 15%;
+    margin-top: 5%;
 }
-
-
 
 /*---------- MAIN ----------*/
 
@@ -132,10 +130,11 @@ main {
     }
 
     .library {
-        table-layout: fixed;
         width: 100%;
-        border-collapse: collapse;
         text-align: left;
+        
+        table-layout: fixed;
+        border-collapse: collapse;
     }
     .library thead th {
         padding-bottom: 10px;

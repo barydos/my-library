@@ -1,14 +1,16 @@
 /*---------- General Styling ----------*/
 
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
 html, body {
-    margin: 0 auto;
-    padding: 0;
     position: relative;
     width: 900px;
     min-height: 80vh;
-    
+    margin: 0 auto;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif;
 }
 
 /*---------- HEADER ----------*/
@@ -18,7 +20,7 @@ header {
     margin-top: 5%;
 }
 
-/*---------- MAIN ----------*/
+/*---------- MAIN CONTENT ----------*/
 
 main {
     display: flex;
@@ -95,23 +97,25 @@ main {
         box-shadow:  0 0 1px 1px rgb(226, 226, 226);
     }
 
+    button {
+        letter-spacing: 1px;
+    }
     .submission-btn {
         margin: 10px 10px 10px 0;
         padding: 8px 20px;
-        background-color: rgb(70, 204, 255);
-        border: 1px solid rgb(65, 199, 250);
+        border: none;
         border-radius: 3px;
+        background-color: rgb(70, 204, 255);
+        
         color: white;
-
-        letter-spacing: 1px;
     }
     .submission-btn:hover{
         background-color: rgb(60, 194, 245);
         box-shadow: 0 0 1px 0.5px rgb(72, 206, 257);
     }
     .reset {
+        border: none;
         background-color: rgb(201, 37, 165);
-        border: 1px solid rgb(196, 32, 160);
     }
     .reset:hover{
         background-color: rgb(191, 27, 155);
@@ -175,7 +179,7 @@ main {
     }
     .status,
     .status:hover {
-        width: 90px;
+        width: 95px;
         padding: 10px 10px;
         border: 1px solid rgb(212, 212, 212);
         border-radius: 3px;

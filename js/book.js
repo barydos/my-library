@@ -38,8 +38,12 @@ function addBook(e) {
 function deleteBook(e) {
     let rowNum = e.target.closest('tr').getAttribute('data-row');
     let myLibrary = getLibrary();
-    myLibrary.splice(rowNum, 1);
     
+    if (!confirm(`Are you sure you want to remove the following book: \n - '${myLibrary[rowNum].title}'`)) {
+        return;
+    }
+
+    myLibrary.splice(rowNum, 1);
     saveLibrary(myLibrary);
     loadLibrary();
 }

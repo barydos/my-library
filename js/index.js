@@ -1,4 +1,4 @@
-import { loadLibrary, getLibrary, saveLibrary } from './library.js';
+import { loadLibrary } from './library.js';
 
 // initialise book table
 loadLibrary();

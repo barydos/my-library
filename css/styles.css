@@ -81,7 +81,7 @@ main {
         outline: none;
     }
 
-    input[type=text] {
+    input {
         font-size: 13px;
         padding: 5px 15px;
         outline: none;
@@ -90,7 +90,7 @@ main {
         margin: 5px 0;      
         height: 25px;
     }
-    input[type=text]:hover,
+    input:hover,
     select:hover {
         box-shadow:  0 0 1px 1px rgb(226, 226, 226);
     }

@@ -20,7 +20,7 @@
         <h1>My Library</h1>
     </header>
     <main>
-        <div class="desc">This Library project designed by The Odin Project gives me the opportunity to apply my
+        <div class="desc">This <a href='https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library'>Library project</a> designed by <a href='https://www.theodinproject.com/'>The Odin Project</a> gives me the opportunity to apply my
             understanding of Javascript objects, local storage, and basic HTML/CSS.</div>
         <form action="" class="book-input">
             <div class="input-group">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="submit-group pages">
                     <label class="submit-label" for="submit-pages">Pages</label>
-                    <input class="submit-inputs" type="text" name="pages" id="submit-pages" required>
+                    <input class="submit-inputs" type="number" name="pages" id="submit-pages" min="0" required>
                 </div>
                 <div class="submit-group option-group">
                     <label class="submit-label" for="submit-status">Status</label>
@@ -55,7 +55,7 @@
             <span id="empty-msg" style="display: none;">No books to display.</span>
         </div>
     </main>
-    <footer>&copy; <span id="copyright-year"></span>, B. WU <a href='https://github.com/barydos' target='_blank'><img
+    <footer>&copy;&nbsp<span id="copyright-year"></span>, B. WU <a href='https://github.com/barydos' target='_blank'><img
                 src='./images/avatar.png' alt='github-avatar'></a></footer>
 </body>
 

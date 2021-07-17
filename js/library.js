@@ -31,6 +31,7 @@ function saveLibrary(library) {
 function loadLibrary() {
 
     let storedLibrary = localStorage.getItem('library');
+    // TODO: remove when completed
     if (!storedLibrary)
         return initLibrary();
 

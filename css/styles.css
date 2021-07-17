@@ -109,7 +109,8 @@ main {
         
         color: white;
     }
-    .submission-btn:hover{
+    .submission-btn:hover,
+    .submission-btn:focus-visible {
         background-color: rgb(60, 194, 245);
         box-shadow: 0 0 1px 0.5px rgb(72, 206, 257);
     }
@@ -117,7 +118,8 @@ main {
         border: none;
         background-color: rgb(201, 37, 165);
     }
-    .reset:hover{
+    .reset:hover,
+    .reset:focus-visible {
         background-color: rgb(191, 27, 155);
         box-shadow: 0 0 1px 0.5px rgb(203, 39, 167);
     }

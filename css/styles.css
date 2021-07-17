@@ -205,13 +205,21 @@ main {
 footer {
     display: flex;
     justify-content: center;
-    align-items: center;
+    position: relative;
     margin-bottom: 2.5rem;
     
     font-size: 12px;
     font-weight: bold;
 }
 footer img {
+    display: block;
+    position: absolute;
+    bottom: -5px;
     height: 24px;
     margin: 0 10px;
+    border-radius: 50%;
+}
+footer img:hover {
+    height: 26px;
+    box-shadow: 0 0 30px lightgray;
 }

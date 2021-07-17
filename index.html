@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" type="image/svg" href="./images/logo.svg" />
     <title>Library Project</title>
 </head>
 
@@ -38,7 +39,7 @@
                 <div class="submit-group option-group">
                     <label class="submit-label" for="submit-status">Status</label>
                     <div class="select-div">
-                        <select class ="submit-inputs" name="status" id="submit-status">
+                        <select class="submit-inputs" name="status" id="submit-status">
                             <option value=1>Read</option>
                             <option value=0>Not Read</option>
                         </select>
@@ -54,7 +55,8 @@
             <span id="empty-msg" style="display: none;">No books to display.</span>
         </div>
     </main>
-    <footer>&copy; <span id="copyright-year"></span>, B. WU</footer>
+    <footer>&copy; <span id="copyright-year"></span>, B. WU <a href='https://github.com/barydos' target='_blank'><img
+                src='./images/avatar.png' alt='github-avatar'></a></footer>
 </body>
 
 <script type="module" src="js/index.js"></script>
@@ -62,4 +64,5 @@
     let footer = document.querySelector('#copyright-year');
     footer.innerHTML = new Date().getFullYear();
 </script>
+
 </html>

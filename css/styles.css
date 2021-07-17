@@ -204,9 +204,14 @@ main {
 /*---------- FOOTER ----------*/
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 12px;
+    font-weight: bold;
+}
+footer img {
+    height: 24px;
+    margin: 0 10px;
 }

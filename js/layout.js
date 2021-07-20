@@ -30,6 +30,9 @@ function buildTable(myLibrary) {
         document.querySelectorAll('.delete').forEach(btn => {
             btn.addEventListener('click', deleteBook);
         });
+        document.querySelectorAll('.delete-mini').forEach(btn => {
+            btn.addEventListener('click', deleteBook);
+        });
         document.querySelectorAll('.status').forEach(btn => {
             btn.addEventListener('click', toggleStatus);
         });

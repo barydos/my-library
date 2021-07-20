@@ -6,7 +6,7 @@ function buildTable(myLibrary) {
     if (library)
         library.remove();
 
-    if (myLibrary.length === 0) {
+    if (myLibrary && myLibrary.length === 0) {
         document.querySelector('#empty-msg').style.display = "block";
         setEventListeners();
         return;

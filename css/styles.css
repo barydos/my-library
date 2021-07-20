@@ -2,23 +2,189 @@
 
 * {
     font-family: 'Work Sans', sans-serif;
+
+    /* Disable caret on non-inputs */
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;    
 }
 
 html, body {
     position: relative;
-    width: 900px;
-    min-height: 95vh;
     margin: 0 auto;
     padding: 0;
+    width: 70%;
+    min-height: 90vh;
     box-sizing: border-box;
+}
+
+button {
+    justify-self: flex-start;
+    margin: 0;
+    padding: 8px 20px;
+
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(70, 204, 255);
+    color: white;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+button:hover,
+button:focus-visible {
+    cursor: pointer;
+    background-color: rgb(60, 194, 245);
+    box-shadow: 0 0 1px 0.5px rgb(72, 206, 257);
 }
 
 /*---------- HEADER ----------*/
 
 header {
-    text-align: left;
-    margin-top: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 8%;
 }
+.loader {
+    display: block;
+    height: 8px;
+    width: 8px;
+    margin: 0 20px;
+
+    border-radius: 50%;
+    border: 2px solid hsl(210, 14%, 70%);
+    border-top-color: hsl(204, 54%, 51%);
+    animation: load infinite linear 0.5s;
+}
+@keyframes load {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*---------- MODAL ----------*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+
+    background-color: rgba(0,0,0, 0.4);
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 50px 50px 50px;
+    margin: 5% auto 0 auto;
+    width: 15%;
+
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 2px grey;
+}
+.popup{
+    animation: popup 0.05s;
+}
+@keyframes popup {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+#close-modal {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    padding: 5px;
+    margin: 0;
+
+    cursor: pointer;
+}
+
+    /* Modal Form */
+
+    .book-input {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        width: 100%;
+    }
+    .submit-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .submit-group label {
+        align-self: flex-start;
+        padding: 3px;
+        margin-bottom: 5px;
+    }
+    .option-group select {
+        margin-top: 5px;
+        padding: 8px 0 9px 5px;
+        width: 100px;
+
+        outline: none;
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 3px;
+        background-color: white;
+        font-size: 13px;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        padding: 5px 15px;
+        height: 25px;
+
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 3px;
+    }
+    .input-container:hover {
+        box-shadow:  0 0 1px 1px rgb(226, 226, 226);
+    }
+
+    input {
+        width: 100%;
+        font-size: 13px;
+    }
+    input,
+    input:hover,
+    input:active {
+        outline: none;
+        border: none;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none; /* remove arrows on number inputs */
+    }
+
+    #submit-btn {
+        margin-top: 10px;
+    }
 
 /*---------- MAIN CONTENT ----------*/
 
@@ -27,95 +193,31 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 30px auto 0 auto;
-
-    padding-bottom: 10rem;
+    margin: 20px auto 0 auto;
 }
 
     /* Description */
 
     .desc {
-        margin-bottom: 30px;
+        margin: 0 0 30px 0;
         padding: 0;
 
+        /* text-justify: inter-word; */
         font-size: 1rem;
-        text-justify: inter-word;
+        line-height: 1.8rem;
         width: 100%;
     }
 
-
-    /* User Inputs */
-
-    .book-input {
-        width: 100%;
-        margin: 0 auto;
-    }
-    .input-group{
+    /* Button Group */
+    .button-group {
         display: flex;
-        padding: 0;
-        width: 100%;
-        margin: 0 auto;
+        justify-content: space-between;
+        width: 185px;
     }
-    .submit-group {
-        display: flex;
-        flex-direction: column;
-        margin-right: 20px;
-        width: auto;
-    }
-    .submit-group:nth-child(1) {
-        width: 40%;
-    }
-    .submit-group label {
-        align-self: flex-start;
-        padding: 3px;
-    }
-    .option-group {
-        display: flex;
-        width: fit-content;
-    }
-    .option-group select {
-        font-size: 13px;
-        margin-top: 5px;
-        padding: 8px 0 9px 5px;
-        background-color: white;
-        border: 1px solid rgb(209, 209, 209);
-        border-radius: 3px;
-        outline: none;
-    }
-
-    input {
-        font-size: 13px;
-        padding: 5px 15px;
-        outline: none;
-        border: 1px solid rgb(209, 209, 209);
-        border-radius: 3px;
-        margin: 5px 0;      
-        height: 25px;
-    }
-    input:hover,
-    select:hover {
-        box-shadow:  0 0 1px 1px rgb(226, 226, 226);
-    }
-
-    button {
-        letter-spacing: 1px;
-    }
-    .submission-btn {
-        margin: 10px 10px 10px 0;
-        padding: 8px 20px;
-        border: none;
-        border-radius: 3px;
-        background-color: rgb(70, 204, 255);
-        
-        color: white;
-    }
-    .submission-btn:hover,
-    .submission-btn:focus-visible {
-        background-color: rgb(60, 194, 245);
-        box-shadow: 0 0 1px 0.5px rgb(72, 206, 257);
+    .button-group button {
+        margin: 0;
     }
     .reset {
-        border: none;
         background-color: rgb(201, 37, 165);
     }
     .reset:hover,
@@ -123,8 +225,15 @@ main {
         background-color: rgb(191, 27, 155);
         box-shadow: 0 0 1px 0.5px rgb(203, 39, 167);
     }
+    #new-btn {
+        background-color: hsl(240deg 73% 59%);
+    }
+    #new-btn:hover,
+    #new-btn:focus-visible {
+        box-shadow: 0 0 1px 0.5px hsl(240deg 73% 69%);
+    }
 
-    /* library display */
+    /* Library display */
 
     .books {
         display: flex;
@@ -133,8 +242,8 @@ main {
         align-items: center;
         width: 100%;
         margin-top: 50px;
+        margin-bottom: 100px;
     }
-
     .library {
         width: 100%;
         text-align: left;
@@ -148,55 +257,38 @@ main {
     .library tbody tr {
         border-top: 1px solid rgb(211, 211, 211);
     }
-
-    .library thead th:nth-child(1){
+    .library thead th:nth-child(1) {
         width: 35%;
     }
-    .library thead th:nth-child(2){
-        width: 15%;
-    }
     .library thead th:nth-child(3),
-    .library tbody td:nth-child(3){
-        width: 15%;
-        text-align: center;
-    }
+    .library tbody td:nth-child(3),
     .library thead th:nth-child(4),
-    .library tbody td:nth-child(4) {
-        width: 15%;
+    .library tbody td:nth-child(4),
+    .library thead th:nth-child(5),
+    .library tbody td:nth-child(5) {
         text-align: center;
     }
-    .library thead th:nth-child(5) {
-        width: 10%;
-        text-align: center;
-    }
-    .library  td {
+    .library td {
         padding: 25px 0;
     }
 
-    button {
-        font-size: 12px;
-        outline: none;
-    }
-    button:hover {
-        cursor: pointer;
-    }
-    .status,
-    .status:hover {
-        width: 95px;
-        padding: 10px 10px;
-        border: 1px solid rgb(212, 212, 212);
+    .status {
+        width: 100px;
+        padding: 10px;
+
+        border: 1px solid hsl(0, 0%, 83%);
         border-radius: 3px;
         background-color: white;
+        color: hsl(0, 0%, 30%);
     }
     .status:hover {
-        border: 1px solid rgb(212, 212, 212);
-        border-radius: 3px;
-        background-color: rgb(241, 241, 241);
+        background-color: hsl(0, 0%, 99%);
         box-shadow: 0 0 1px 1px rgb(218, 218, 218);
     }
     .delete {
         width: fit-content;
-        padding: 10px 10px;
+        padding: 10px;
+
         background-color: rgb(233, 45, 101);
         border: none;
         border-radius: 3px;
@@ -210,22 +302,24 @@ main {
 /*---------- FOOTER ----------*/
 
 footer {
-    display: flex;
     position: absolute;
-    bottom: 20px;
-    right: 50%;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    bottom: 30px;
     
     font-size: 12px;
     font-weight: bold;
 }
+.footer-container {
+    margin: 0 auto;
+}
+.footer-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 footer img {
-    display: block;
-    position: absolute;
-    bottom: -5px;
     height: 24px;
-    margin: 0 10px;
+    margin-left: 8px;
     border-radius: 50%;
 }
 footer img:hover {

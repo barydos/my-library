@@ -18,45 +18,62 @@
 <body>
     <header>
         <h1>My Library</h1>
+        <div class="loader"></div>
     </header>
-    <main>
-        <div class="desc">This <a href='https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library'>Library project</a> designed by <a href='https://www.theodinproject.com/'>The Odin Project</a> gives me the opportunity to apply my
-            understanding of Javascript objects, local storage, and basic HTML/CSS.</div>
-        <form action="" class="book-input">
-            <div class="input-group">
-                <div class="submit-group">
-                    <label class="submit-label" for="submit-book">Book</label>
-                    <input class="submit-inputs" type="text" name="book" id="submit-book" required>
-                </div>
-                <div class="submit-group">
-                    <label class="submit-label" for="submit-author">Author</label>
-                    <input class="submit-inputs" type="text" name="author" id="submit-author" required>
-                </div>
-                <div class="submit-group pages">
-                    <label class="submit-label" for="submit-pages">Pages</label>
-                    <input class="submit-inputs" type="number" name="pages" id="submit-pages" min="0" required>
-                </div>
-                <div class="submit-group option-group">
-                    <label class="submit-label" for="submit-status">Status</label>
-                    <div class="select-div">
-                        <select class="submit-inputs" name="status" id="submit-status">
-                            <option value=1>Read</option>
+
+    <div class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="close-modal" style="float: right;">&times;</span>
+            <form action="" class="book-input">
+                <div class="input-group">
+                    <div class="submit-group">
+                        <label for="submit-book">Book</label>
+                        <div class="input-container"><input type="text" name="book" id="submit-book" required></div>
+                    </div>
+                    <div class="submit-group">
+                        <label for="submit-author">Author</label>
+                        <div class="input-container"><input type="text" name="author" id="submit-author" required></div>
+                    </div>
+                    <div class="submit-group">
+                        <label for="submit-pages">Pages</label>
+                        <div class="input-container"><input type="number" name="pages" id="submit-pages" min="0" required></div>
+                    </div>
+                    <div class="submit-group option-group">
+                        <label for="submit-status">Status</label>
+                        <select name="status" id="submit-status">
                             <option value=0>Not Read</option>
+                            <option value=1>Read</option>
                         </select>
                     </div>
+                    <button id="submit-btn" type="submit">SUBMIT</button>
                 </div>
-            </div>
-            <div class="bottom-submit-group">
-                <button class="submission-btn" id="submit-btn" type="submit">SUBMIT</button>
-                <button class="submission-btn reset" type="button">RESET</button>
-            </div>
-        </form>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <div class="desc">
+            This <a href='https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library'>Library project</a> designed by <a href='https://www.theodinproject.com/'>The Odin Project</a> gives me the opportunity to apply my
+            understanding of Javascript objects, local storage, and basic HTML/CSS.
+        </div>
+        <div class="button-group">
+            <button class="reset" type="button">RESET</button>
+            <button id="new-btn" type="button">+ NEW</button>
+        </div>
         <div class="books">
             <span id="empty-msg" style="display: none;">No books to display.</span>
         </div>
     </main>
-    <footer>&copy;&nbsp<span id="copyright-year"></span>, B. WU <a href='https://github.com/barydos' target='_blank'><img
-                src='./images/avatar.png' alt='github-avatar'></a></footer>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-msg">
+                &copy;&nbsp<span id="copyright-year"></span>, B. WU <a href='https://github.com/barydos' target='_blank'><img
+                src='./images/avatar.png' alt='github-avatar'></a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 <script type="module" src="js/index.js"></script>

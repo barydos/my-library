@@ -14,6 +14,11 @@ function initLibrary() {
     loadLibrary();
 }
 
+function resetLibrary() {
+    saveLibrary([]);
+    loadLibrary();
+}
+
 function getLibrary() {
     let myLibrary = JSON.parse(localStorage.getItem('library'));
     let myBooks = [];
@@ -31,9 +36,9 @@ function saveLibrary(library) {
 function loadLibrary() {
 
     let storedLibrary = localStorage.getItem('library');
-    // TODO: remove when completed
-    if (!storedLibrary)
-        return initLibrary();
+    if (!storedLibrary) {
+        return resetLibrary();
+    }
 
     buildTable(JSON.parse(storedLibrary));
 }
@@ -42,5 +47,6 @@ function loadLibrary() {
 export {
     getLibrary,
     loadLibrary,
-    saveLibrary
+    saveLibrary,
+    resetLibrary
 };

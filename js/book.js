@@ -33,13 +33,15 @@ function addBook(e) {
     loadLibrary();
 
     this.reset();
+    let modal = document.querySelector('.modal');
+    modal.style.display = 'none';
 }
 
 function deleteBook(e) {
     let rowNum = e.target.closest('tr').getAttribute('data-row');
     let myLibrary = getLibrary();
     
-    if (!confirm(`Are you sure you want to remove the following book: \n - '${myLibrary[rowNum].title}'`)) {
+    if (!confirm(`Are you sure you want to remove the following book: \n - "${myLibrary[rowNum].title}"`)) {
         return;
     }
 

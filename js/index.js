@@ -1,24 +1,44 @@
-import { loadLibrary } from './library.js';
+import { loadLibrary, resetLibrary } from './library.js';
 
-// initialise book table
 loadLibrary();
 
+let modal = document.querySelector('.modal');
+let modalContent = document.querySelector('.modal-content');
+let closeModalBtn = document.querySelector('#close-modal');
+let form = document.querySelector('form');
 let resetBtn = document.querySelector('.reset');
+let newBookBtn = document.querySelector('#new-btn');
+
+closeModalBtn.addEventListener('click', closeForm)
 resetBtn.addEventListener('click', () => {
     let checkReset = confirm('Reset library?');
     if (!checkReset)
         return;
 
-    localStorage.clear();
-    loadLibrary();
+    resetLibrary();
+})
+newBookBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+    modalContent.classList.add('popup');
+    
+    let titleInput = document.querySelector('#submit-book');
+    titleInput.focus();
 });
 
-/**
- * TODO:
- * 1. Toggle `read` status [DONE]
- * 2. Add localStorage functionality [DONE]
- * 3. Add CSS to make pretty (change footer to github) incl. fonts [DONE]
- * 4. Create a modal to `edit` book
- * 5. Convert submission to a modal (New Book + button)
- * 6. Add confirmation prompt for deleting a book.
- */
+function closeForm() {
+    form.reset();
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal)
+        closeForm();
+}
+window.onkeyup = function (event) {
+    if (event.key === 'Escape')
+        closeForm();
+}
+window.onload = () => {
+    let loader = document.querySelector('.loader');
+    loader.style.display = 'none';
+}

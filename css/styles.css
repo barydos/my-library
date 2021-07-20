@@ -339,7 +339,9 @@ footer img:hover {
       width: 95%;
     }
 
-
+    header {
+        justify-content: center;
+    }
     .modal-content {
         padding: 30px;
         width: 60%;

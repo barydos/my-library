@@ -88,6 +88,15 @@ function addToBookTable(tableElem, book) {
     del.classList.add('delete');
     del.setAttribute('type', 'submit');
     td.appendChild(del);
+
+    // Delete button for mobile users
+    let delMini = document.createElement('button');
+    delMini.innerHTML = '&times;';
+    delMini.classList.remove('delete');
+    delMini.classList.add('delete-mini');
+    delMini.setAttribute('type', 'submit');
+    
+    td.appendChild(delMini);
     row.appendChild(td);
 }
 

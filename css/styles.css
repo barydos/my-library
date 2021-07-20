@@ -285,7 +285,12 @@ main {
         background-color: hsl(0, 0%, 99%);
         box-shadow: 0 0 1px 1px rgb(218, 218, 218);
     }
-    .delete {
+    .delete-mini {
+        display: none;
+        font-size: 20px;
+    }
+    .delete,
+    .delete-mini {
         width: fit-content;
         padding: 10px;
 
@@ -294,7 +299,8 @@ main {
         border-radius: 3px;
         color: white;
     }
-    .delete:hover {
+    .delete:hover,
+    .delete-mini:hover {
         background-color: rgb(213, 25, 81);
         box-shadow: 0 0 1px 1px rgb(243, 55, 111);
     }
@@ -326,3 +332,56 @@ footer img:hover {
     height: 26px;
     box-shadow: 0 0 30px lightgray;
 }
+
+/*------- Mobile Users ---------*/
+@media only screen and (max-width: 600px) {
+    html, body {
+      width: 95%;
+    }
+
+
+    .modal-content {
+        padding: 30px;
+        width: 60%;
+    }
+    .library {
+        text-align: left;
+    }
+    .library thead th:nth-child(1),
+    .library tbody td:nth-child(1) {
+        width: 35%;
+    }
+    .library thead th:nth-child(2),
+    .library tbody td:nth-child(2) {
+        width: 18%;
+    }
+    .library thead th:nth-child(3),
+    .library tbody td:nth-child(3) {
+        width: 12%;
+    }
+    .library thead th:nth-child(4),
+    .library tbody td:nth-child(4) {
+        text-align: center;
+        width: 20%;
+    }
+    .library thead th:nth-child(5),
+    .library tbody td:nth-child(5) {
+        text-align: center;
+        width: 8%;
+    }
+
+    .status {
+        max-width: 60px;
+        text-align: center;
+    }
+    .delete {
+        display: none;
+    }
+    .delete-mini {
+        display: block;
+    }
+    .status,
+    .delete-mini {
+        height: 50px;
+    }
+  }

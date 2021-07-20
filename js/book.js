@@ -25,6 +25,7 @@ function addBook(e) {
     e.preventDefault();
 
     let [title, author, pages, status] = [...e.target.elements].map(item => item.value);
+    pages = pages.replace(/^0+/, '')
     let newBook = new Book(title, author, pages, status);
     
     let currLibrary = getLibrary();

@@ -1,10 +1,14 @@
 import { addBook, deleteBook, toggleStatus } from './book.js';
 
 function buildTable(myLibrary) {
-    let booksDisplay = document.querySelector('.books');
+    // let booksDisplay = document.querySelector('.books');
     let library = document.querySelector('.library');
-    if (library)
-        library.remove();
+    let tBody = document.querySelector('tbody');
+    if (library && tBody)
+        tBody.remove();
+        
+    // if (library)
+    //     library.remove();
 
     if (myLibrary && myLibrary.length === 0) {
         document.querySelector('#empty-msg').style.display = "block";
@@ -14,14 +18,15 @@ function buildTable(myLibrary) {
         document.querySelector('#empty-msg').style.display = "none";
     }
 
-    let bookTable = document.createElement('table');
-    bookTable.classList.add('library');
+    // let bookTable = document.createElement('table');
+    // bookTable.classList.add('library');
+    let bookTable = document.querySelector('table');
 
-    generateBooksHeading(bookTable);
+    // generateBooksHeading(bookTable);
     generateBooksBody(bookTable, myLibrary);
 
-    booksDisplay.appendChild(bookTable);
-    let btn = document.createElement('button');
+    // booksDisplay.appendChild(bookTable);
+    // let btn = document.createElement('button');
 
     setEventListeners();
 

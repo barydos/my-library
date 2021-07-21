@@ -251,6 +251,13 @@ main {
         table-layout: fixed;
         border-collapse: collapse;
     }
+    th:nth-child(3),
+    td:nth-child(3),
+    th:nth-child(4),
+    td:nth-child(4) {
+        text-align: center;
+    }
+    /*
     .library thead th {
         padding-bottom: 10px;
     }
@@ -270,10 +277,10 @@ main {
     }
     .library td {
         padding: 25px 0;
-    }
+    } */
 
     .status {
-        width: 100px;
+        /* width: 100px; */
         padding: 10px;
 
         border: 1px solid hsl(0, 0%, 83%);
